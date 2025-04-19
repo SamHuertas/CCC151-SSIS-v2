@@ -1,6 +1,6 @@
 import sys
 sys.dont_write_bytecode = True
-from Database import DatabaseConnection
+from Database.Database import DatabaseConnection
 from Dialogs.EditStudentP import EditStudentPopup
 from Dialogs.EditProgramP import EditProgramPopup
 from Dialogs.EditCollegeP import EditCollegePopup

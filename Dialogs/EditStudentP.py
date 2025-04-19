@@ -4,7 +4,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QDialog, QLabel, QPushButton
 from Dialogs.DuplicateStudentP import DuplicateStudentPopup
 from Dialogs.InputError import InputErrorPopup
-from Database import DatabaseConnection
+from Database.Database import DatabaseConnection
 
 class Ui_EditStudentPopup(object):
     def setupUi(self, EditStudentPopup):

@@ -2,7 +2,7 @@ from pathlib import Path
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QDialog, QLabel, QPushButton
-from Database import DatabaseConnection
+from Database.Database import DatabaseConnection
 import mysql.connector
 
 class Ui_DeleteProgramPopup(object):
