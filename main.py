@@ -1196,6 +1196,7 @@ class MainWindow(QMainWindow):
         
         cursor.close()
         connection.close()
+
     def search_program(self):
         search_by = self.ui.ProgramSearchDD.currentText()
         search_text = self.ui.ProgramSearchTB.text().strip().lower()
@@ -1209,23 +1210,35 @@ class MainWindow(QMainWindow):
             return
 
         search_options = {
-            "Program Code": 0,
-            "Program Name": 1,
-            "College Code": 2
+            "Program Code": "program_code",
+            "Program Name": "program_name",
+            "College Code": "college_code"
         }
 
         column_index = search_options.get(search_by, 0)
 
-        filtered_rows = [row for row in self.program_data[1:] if search_text in row[column_index].lower()]
+        db = DatabaseConnection()
+        connection = db.get_connection()
+        cursor = connection.cursor()
 
+        query = "SELECT * FROM program WHERE {} LIKE %s".format(column_index)
+        param = "%" + search_text + "%"
+        cursor.execute(query, (param,))
+
+        results = cursor.fetchall()
+        print(f"Found {len(results)} matching records")
         self.ui.ProgramTable.setRowCount(0)
-        for row_data in filtered_rows:
+
+        for row_data in results:
             row_position = self.ui.ProgramTable.rowCount()
             self.ui.ProgramTable.insertRow(row_position)
             for col, data in enumerate(row_data):
-                item = QtWidgets.QTableWidgetItem(data)
-                if data.strip().upper() == "NULL":
+                data_str = str(data) if data is not None else "NULL"
+                item = QtWidgets.QTableWidgetItem(data_str)
+                if data_str.strip().upper() == "NULL":
                     item.setForeground(QColor("red"))
+                else:
+                    item.setForeground(QColor("black"))
                 self.ui.ProgramTable.setItem(row_position, col, item)
 
     def search_college(self):
@@ -1241,16 +1254,25 @@ class MainWindow(QMainWindow):
             return
 
         search_options = {
-            "College Code": 0,
-            "College Name": 1
+            "College Code": "college_code",
+            "College Name": "college_name"
         }
 
         column_index = search_options.get(search_by, 0)
 
-        filtered_rows = [row for row in self.college_data[1:] if search_text in row[column_index].lower()]
+        db = DatabaseConnection()
+        connection = db.get_connection()
+        cursor = connection.cursor()
 
+        query = "SELECT * FROM college WHERE {} LIKE %s".format(column_index)
+        param = "%" + search_text + "%"
+        cursor.execute(query, (param,))
+
+        results = cursor.fetchall()
+        print(f"Found {len(results)} matching records")
         self.ui.CollegeTable.setRowCount(0)
-        for row_data in filtered_rows:
+
+        for row_data in results:
             row_position = self.ui.CollegeTable.rowCount()
             self.ui.CollegeTable.insertRow(row_position)
             for col, data in enumerate(row_data):
