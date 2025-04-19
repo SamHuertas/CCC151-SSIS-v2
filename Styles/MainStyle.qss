@@ -1,0 +1,125 @@
+#MainPage {
+	background-color: #bbdefb;
+}
+
+#AddStudent, #AddCollege, #AddProgram, #Database {
+	background-color: #ffffff;
+	border-radius: 18px;
+}
+
+#AddStudentText, #AddProgramText, #AddCollegeText{
+	font-weight: bold;
+}
+
+#MainPage QPushButton {
+	background-color: #1e88e5;
+	border-radius: 8px;
+	border-width: 2px;
+	color: white;
+}
+
+#MainPage QPushButton:disabled {
+	background-color: #a5cff5;
+	color: white;
+}
+
+#MainPage QPushButton:hover {
+	background-color: rgb(27, 126, 212);
+}
+
+#MainPage QPushButton:pressed {
+	border: 2px solid rgb(152, 205, 229);
+}
+
+#MainPage QLineEdit {
+	border-radius: 5px;
+	background-color: rgb(245, 245, 245);
+	border: 1px solid rgb(235, 235, 235);
+}
+
+#MainPage QLineEdit:hover {
+	border: rgb(250, 250, 250);
+}
+
+#MainPage QLineEdit:focus {
+	border: rgb(210, 210, 210);
+	background-color: rgb(231, 231, 231);
+}
+
+QTableWidget{
+	background-color: rgb(245, 245, 245);
+	border: 1px solid rgb(235, 235, 235);
+	alternate-background-color: #e6e6e6;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+QTableWidget::item:selected{
+	background-color: #a2d2e8;
+}
+
+QHeaderView::section {
+    font-weight: bold;
+}
+
+#Heading {
+	background-color: rgb(252, 252, 252);
+    border-bottom: 3px solid #96b2c9;
+}
+
+QTabWidget::pane {
+    border-top: 1px solid #ddd;
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: #666;
+    font-size: 14px;
+    padding: 4px 15px;
+    border: none;
+}
+
+QTabBar::tab:selected {
+    color: #007bff; 
+    border-bottom: 2px solid #007bff;
+}
+
+QTabBar::tab:hover {
+    color: #0056b3;
+}
+
+QTabBar::tab:!selected {
+    margin-bottom: 2px;
+}
+
+QComboBox {
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	padding-left: 10px;
+	background-color: #e6e6e6;
+}
+
+QComboBox:drop-down {
+	border:0px;
+}
+
+QComboBox:down-arrow {
+	image: url("Assets/arrow-204-16.png");
+	width: 12px;
+	height: 12px;
+	margin-right: 1px;
+}
+
+QComboBox:on {
+	border: 2px solid #cccccc;
+}
+
+QComboBox QListView{
+	font-size: 13px;
+	border: 1px solid rgb(235, 235, 235);
+	padding: 1px;
+	background-color: rgb(252, 252, 252);
+	outline: 2px;
+	border-color: #cccccc;
+}
+

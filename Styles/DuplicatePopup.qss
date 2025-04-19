@@ -1,0 +1,21 @@
+#DuplicatePopup{
+	background-color: white;
+}
+
+#CloseButton{
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 8px;
+	color: white;
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+#CloseButton:hover{
+	background-color: #bb2d3b; 
+	border-color: #dc3545;
+}
+
+#CloseButton:pressed{
+	border: 2px solid #f0a9b0;
+}

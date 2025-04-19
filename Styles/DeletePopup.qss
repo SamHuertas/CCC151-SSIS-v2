@@ -1,0 +1,39 @@
+#DeleteStudentPopup, #DeleteProgramPopup, #DeleteCollegePopup{
+	background-color: white;
+}
+
+#CancelButton{
+	color: black;
+	border-color: #cbcaca;
+	background-color: #EFEFEF;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 8px;
+}
+
+#CancelButton:hover{
+	background-color: #dedede;
+	border-color: #cbcaca;
+}
+
+#CancelButton:pressed{
+	border: 2px solid #9a9999;
+}
+
+#DeleteButton{
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 8px;
+	color: white;
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+#DeleteButton:hover{
+	background-color: #bb2d3b; 
+	border-color: #dc3545;
+}
+
+#DeleteButton:pressed{
+	border: 2px solid #f0a9b0;
+}
