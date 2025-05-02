@@ -3,10 +3,10 @@ import mysql.connector
 class DatabaseConnection:
     def __init__(self):
             self.connection = mysql.connector.connect(
-                host = "localhost",
-                user = "root",
-                passwd = "samalexis123",
-                database = "ssis"
+                host = "sql12.freesqldatabase.com",
+                user = "sql12776495",
+                passwd = "qnb3UyFNtS",
+                database = "sql12776495"
             )
             if self.connection.is_connected():
                 print("Successfully connected to MySQL database")
