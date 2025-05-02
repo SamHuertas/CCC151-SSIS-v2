@@ -96,4 +96,5 @@ class DeleteCollegePopup(QDialog):
             self.parent().openStudentCSV()
             self.parent().openProgramCSV()
             self.parent().openCollegeCSV()  
+            self.parent().PopulateCollegeCode()
             
